@@ -199,8 +199,10 @@ def analyze_performance(file_path, position, player_name, player_image_path):
         filename = f"{player_name}_Performance_Analysis.pdf"
         with open(filename, "wb") as f:
             f.write(pdf.output(dest="S"))
+            
 
-
+        st.markdown(f"Download your report: [Download Report](./{filename})")
+ 
         return analysis_result
 
     except FileNotFoundError:
