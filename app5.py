@@ -185,7 +185,7 @@ def analyze_performance(file_path, position, player_name, player_image_path):
               ],
            model="gpt-3.5-turbo",
            )
-         )
+         
 
         analysis_result = completion.choices[0].text.strip()
 
