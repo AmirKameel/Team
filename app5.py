@@ -177,12 +177,14 @@ def analyze_performance(file_path, position, player_name, player_image_path):
         prompt += "Generate a comprehensive report highlighting the player's strengths, weaknesses, and overall rating (1-10)."
 
         completion = openai.chat.completions.create(
-            engine="gpt-3.5-turbo-instruct",
-            prompt=prompt,
-            max_tokens=1024,
-            n=1,
-            stop=None,
-            temperature=0.5,
+         messages=[
+        {
+            "role": "user",
+            "content": prompt,
+         }
+              ],
+           model="gpt-3.5-turbo",
+           )
         )
 
         analysis_result = completion.choices[0].text.strip()
