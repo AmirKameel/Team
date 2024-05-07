@@ -187,7 +187,7 @@ def analyze_performance(file_path, position, player_name, player_image_path):
            )
          
 
-        analysis_result = completion.choices[0].text.strip()
+        analysis_result = completion.choices[0].message.content 
 
         # Convert stats dictionary to table format for PDF
         stats_table = [[key, str(value)] for key, value in stats.items()]
