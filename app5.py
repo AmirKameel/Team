@@ -197,7 +197,7 @@ def analyze_performance(file_path, position, player_name, player_image_path):
 
         # Download functionality using Streamlit
         filename = f"{player_name}_Performance_Analysis.pdf"
-        pdf_data = pdf.output(dest="S")
+        pdf_data = pdf.output(dest="S").encode()
         st.download_button("Download Report", data=pdf_data, file_name=filename, mime="application/pdf")
 
         return analysis_result
