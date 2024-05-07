@@ -1,6 +1,6 @@
 streamlit
 pandas
 fpdf2
-openai==0.28
+openai
 python-dotenv
 Pillow
