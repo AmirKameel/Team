@@ -201,7 +201,7 @@ def analyze_performance(file_path, position, player_name, player_image_path):
             f.write(pdf.output(dest="S"))
             
 
-        st.markdown(f"Download your report: [Download Report](./{filename})")
+        st.download_button(label="Download Report", data=open(filename, "rb"), file_name=filename, mime="application/pdf")
  
         return analysis_result
 
